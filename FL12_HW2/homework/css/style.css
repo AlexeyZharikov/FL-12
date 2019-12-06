@@ -30,14 +30,18 @@ section {
 }
 
 /* section */
-        /* triangle */
-section:before{
+/* triangle */
+section::before {
     content: '';
-    border-top: 40px solid lightskyblue ;
+    border-top: 40px solid lightskyblue;
     border-right: 40px solid white;
     width: 0;
- }
-         /* triangle */
+}
+section:nth-child(6)::before{
+    display: none;
+} 
+
+/* triangle */
 
 .flex-2-col {
     display: flex;
@@ -68,4 +72,61 @@ section:before{
     background-color: lightgrey;
     color: lightskyblue;
 
+}
+
+/* we are */
+.heading h2 {
+    color: lightskyblue;
+    font-weight: 300;
+    text-align: center;
+}
+
+.heading ol {
+    list-style-type: lower-alpha;
+}
+
+.heading li:hover::before {
+    content: ">";
+}
+
+.heading li:nth-child(1)::after,
+.heading li:nth-child(3)::after {
+    content: "New";
+    vertical-align: super;
+    font-size: 15px;
+    font-weight: 200;
+    font-style: italic;
+}
+
+/* our work */
+.blocks .tm-team-description-container{
+    margin: 0;
+}
+
+.blocks h2{
+    text-align: left;
+}
+
+.blocks p:nth-child(3){
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+
+.box-work{
+    padding: 7px;
+}
+
+.box-work:nth-child(2n-1){
+    background-color: lightskyblue;
+    color: #fff;
+}
+.box-work p::first-letter{
+    font-weight: bold;
+}
+
+/* carousel */
+
+.carousel-item p {
+    line-height: 30px;
 }
