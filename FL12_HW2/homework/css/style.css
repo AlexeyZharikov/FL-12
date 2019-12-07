@@ -140,18 +140,102 @@ form {
     text-align: left;
 }
 
+.form-control {
+    border: 1px solid skyblue;
+}
+
 form input:focus {
     background-color: skyblue;
 }
 
 #contact_message {
-    background: url(../img/email-icon.png) right bottom no-repeat;
+    background: url(../img/email-icon.png) no-repeat;
     background-size: 30px 30px;
     background-position: right 10px bottom 10px;
 }
 
-.submit-btn {
+.submit-btn,
+.submit-btn:hover {
     background-color: #fff;
     color: skyblue;
     border-color: skyblue;
+}
+
+.submit-btn:active:hover {
+    background-color: skyblue;
+    color: #fff;
+    border-color: #fff;
+}
+
+@media print {
+    body {
+        padding: 0;
+    }
+
+    .tm-sidebar,
+    section::before,
+    .flex-item img,
+    #about,
+    .heading li::after,
+    .blocks .tm-content-box,
+    #contact,
+    .img-contact-us,
+    section:last-child {
+        display: none;
+    }
+
+    @page {
+        margin: 1.5cm;
+    }
+
+    /* nav */
+
+    /* logo */
+
+    #home {
+        margin: 0;
+    }
+
+    .tm-main-content {
+        padding: 0;
+    }
+
+    /* what we do */
+
+    .flex-2-col {
+        text-align: center;
+        margin: 0;
+    }
+
+    .tm-team-description-container {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    /* we are */
+    .heading div {
+        padding: 10px 0 0 0;
+        max-width: 100%;
+    }
+
+    .heading li {
+        display: inline-block;
+        width: 50%;
+        float: right;
+        /* line-height: 1cm; */
+        margin-top: 5px;
+    }
+
+    /* our work */
+    .blocks, .blocks h2{
+        text-align: center;
+    }
+
+    /* how we do it */
+
+    #ideas .carousel {
+        margin: 0;
+        padding: 0;
+    }
 }
