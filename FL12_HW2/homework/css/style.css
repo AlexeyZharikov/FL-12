@@ -38,13 +38,10 @@ section,
 section::before {
     content: '';
     border-top: 40px solid lightskyblue;
-    border-right: 40px solid white;
+    border-right: 40px solid transparent;
     width: 0;
 }
 
-section:nth-child(6)::before {
-    display: none;
-}
 
 .flex-2-col {
     display: flex;
