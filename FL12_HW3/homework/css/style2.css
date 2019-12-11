@@ -1,0 +1,125 @@
+body {
+  background-color: white;
+  margin: 0 auto;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+::selection {
+  background: #14a0c7;
+  color: #2c2f3c; }
+
+.header {
+  background: url("../img/m-h-day.jpg") center no-repeat;
+  text-align: left;
+  max-width: 100%;
+  background-size: 1920px;
+  border: 2px solid backgrCol;
+  padding: 0;
+  border-bottom-right-radius: 750px 290px; }
+  .header .header-wrap {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto; }
+    .header .header-wrap .landing-logo {
+      margin: 0 25px; }
+      .header .header-wrap .landing-logo img {
+        float: left;
+        margin: 7px 0;
+        height: 45px;
+        width: 50px; }
+      .header .header-wrap .landing-logo p {
+        color: #2c2f3c;
+        font-family: 'Hind', sans-serif;
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        padding-left: 15px; }
+        .header .header-wrap .landing-logo p span {
+          display: block;
+          font-size: 10px;
+          margin: 0 auto; }
+    .header .header-wrap .header_heading,
+    .header .header-wrap .header_text {
+      max-width: 660px;
+      margin: 25px 25px; }
+    .header .header-wrap .header_heading {
+      color: #2c2f3c;
+      font-size: 70px;
+      font-weight: 700;
+      text-align: left; }
+    .header .header-wrap .header_text {
+      color: #2c2f3c;
+      font-size: 20px;
+      text-align: left; }
+    .header .header-wrap div:last-child {
+      text-align: center;
+      margin: 25px;
+      max-width: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+
+.section {
+  text-align: center; }
+  .section .section_text {
+    font-size: 50px;
+    font-weight: 600; }
+  .section .section_card_wrap {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%; }
+    .section .section_card_wrap .section_card {
+      max-height: 100%;
+      width: 100%;
+      background-color: #21232e;
+      display: flex;
+      align-items: center;
+      justify-content: leftspace-between;
+      margin: 35px auto;
+      border-radius: 10px; }
+      .section .section_card_wrap .section_card img {
+        border-radius: 10px;
+        margin: 15px;
+        max-height: 300px;
+        width: 435px;
+        max-width: 100%; }
+      .section .section_card_wrap .section_card div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        margin: 0 auto; }
+        .section .section_card_wrap .section_card div .section_card_heading {
+          font-size: 20px;
+          margin: 10px 0 10px 0;
+          font-weight: 700; }
+        .section .section_card_wrap .section_card div .section_card_text {
+          color: #aee7f6;
+          font-size: 18px;
+          text-align: left;
+          margin: 10px 0 10px 0; }
+        .section .section_card_wrap .section_card div a {
+          font-size: 18px;
+          color: #aee7f6;
+          margin: 10px 0 10px 0; }
+
+.header_button {
+  width: 148px;
+  height: 52px;
+  color: white;
+  background: #699900;
+  border: 1px solid #699900;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 50px 0; }
+
+.login {
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  margin: 50px 0; }

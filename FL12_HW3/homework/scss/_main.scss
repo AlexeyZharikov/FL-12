@@ -1,0 +1,191 @@
+body {
+    background-color: $backgrCol;
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', sans-serif;
+
+
+}
+
+::selection {
+    background: $selectionBkgr;
+    color: $fontCol;
+}
+
+//header
+
+.header {
+    background: $headerBackgr center no-repeat;
+    text-align: left;
+    max-width: 100%;
+    background-size: 1920px;
+    border: 2px solid backgrCol;
+    padding: 0;
+    border-bottom-right-radius: 750px 290px;
+
+    .header-wrap {
+        width: 100%;
+        max-width: 1540px;
+        margin: 0 auto;
+
+        .landing-logo {
+            margin: 0 25px;
+
+            img {
+                float: left;
+                margin: 7px 0;
+                height: 45px;
+                width: 50px;
+            }
+
+            p {
+                color: $fontCol;
+                font-family: 'Hind', sans-serif;
+                display: inline-block;
+                margin: 0 auto;
+                font-size: 25px;
+                font-weight: 700;
+                text-align: center;
+                padding-left: 15px;
+
+                span {
+                    display: block;
+                    font-size: 10px;
+                    margin: 0 auto;
+
+                }
+            }
+        }
+
+        .header_heading,
+        .header_text {
+            max-width: 660px;
+            margin: 25px 25px;
+        }
+
+        .header_heading {
+            color: $fontCol;
+            font-size: 70px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .header_text {
+            color: $fontCol;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        div:last-child {
+            text-align: center;
+            margin: 25px;
+            max-width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+        }
+    }
+}
+
+.section {
+    text-align: center;
+
+    .section_text {
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .section_card_wrap {
+        margin: 0 auto;
+        max-width: 1000px;
+        width: 100%;
+
+
+        .section_card {
+            max-height: 100%;
+            width: 100%;
+            background-color: rgb(33, 35, 46);
+            display: flex;
+            align-items: center;
+            justify-content: leftspace-between;
+            margin: 35px auto;
+            border-radius: 10px ;
+
+            img {
+                border-radius: 10px;
+                margin: 15px;
+                max-height: 300px;
+                width: 435px;
+                max-width: 100%;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 400px;
+                width: 100%;
+                text-align: center;
+                color: rgb(255, 255, 255);
+                margin: 0 auto;
+
+
+                .section_card_heading {
+                    font-size: 20px;
+                    margin: 10px 0 10px 0;
+                    font-weight: 700;
+                }
+
+                .section_card_text {
+
+                    color: rgb(174, 231, 246);
+                    font-size: 18px;
+                    text-align: left;
+                    margin: 10px 0 10px 0;
+
+
+                }
+
+                a {
+                    font-size: 18px;
+                    color: rgb(174, 231, 246);
+                    margin: 10px 0 10px 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//button made MIXIN!!!!
+.header_button {
+    width: 148px;
+    height: 52px;
+    color: white;
+    background: rgb(105, 153, 0);
+    border: 1px solid rgb(105, 153, 0);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 50px 0;
+}
+
+//login
+.login {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    margin: 50px 0;
+
+}
+
+//--------
