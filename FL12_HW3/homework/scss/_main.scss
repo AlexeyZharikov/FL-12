@@ -1,3 +1,55 @@
+@mixin logo_image {
+    float: left;
+    margin: 7px 0;
+    height: 45px;
+    width: 50px;
+
+}
+
+@mixin logo_text_p {
+
+    color: $fontCol;
+    font-family: 'Hind', sans-serif;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: $fontWeight;
+    text-align: center;
+    padding-left: 15px;
+
+}
+
+@mixin logo_text_span {
+    display: block;
+    font-size: 10px;
+    margin: 0 auto;
+
+}
+
+
+
+@mixin button {
+    width: 148px;
+    height: 52px;
+    color: white;
+    background: rgb(105, 153, 0);
+    border: 1px solid rgb(105, 153, 0);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+
+}
+
+@mixin login_url {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+
+}
+
+
+
+
 body {
     background-color: $backgrCol;
     margin: 0 auto;
@@ -18,7 +70,7 @@ body {
     text-align: left;
     max-width: 100%;
     background-size: 1920px;
-    border: 2px solid backgrCol;
+    border: 2px solid $backgrCol;
     padding: 0;
     border-bottom-right-radius: 750px 290px;
 
@@ -31,48 +83,33 @@ body {
             margin: 0 25px;
 
             img {
-                float: left;
-                margin: 7px 0;
-                height: 45px;
-                width: 50px;
+                @include logo_image
             }
 
             p {
-                color: $fontCol;
-                font-family: 'Hind', sans-serif;
-                display: inline-block;
-                margin: 0 auto;
-                font-size: 25px;
-                font-weight: 700;
-                text-align: center;
-                padding-left: 15px;
+                @include logo_text_p;
+
 
                 span {
-                    display: block;
-                    font-size: 10px;
-                    margin: 0 auto;
-
+                    @include logo_text_span;
                 }
             }
         }
 
-        .header_heading,
-        .header_text {
-            max-width: 660px;
-            margin: 25px 25px;
-        }
-
         .header_heading {
             color: $fontCol;
-            font-size: 70px;
-            font-weight: 700;
+            max-width: 660px;
+            margin: 25px 25px;
             text-align: left;
+
+            font-weight: $fontWeight;
+            font-size: 70px;
         }
 
         .header_text {
-            color: $fontCol;
+            @extend .header_heading;
+            font-weight: 300;
             font-size: 20px;
-            text-align: left;
         }
 
         div:last-child {
@@ -83,6 +120,17 @@ body {
             align-items: center;
             justify-content: space-between;
 
+            .header_button {
+                @include button;
+                margin: 50px 0;
+            }
+
+            .login {
+                @include login_url;
+                margin: 50px 0;
+            }
+
+
 
         }
     }
@@ -90,102 +138,162 @@ body {
 
 .section {
     text-align: center;
+    // z-index: 20;
 
     .section_text {
+        color: $fontCol;
         font-size: 50px;
         font-weight: 600;
     }
 
     .section_card_wrap {
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: 1130px;
         width: 100%;
 
 
         .section_card {
-            max-height: 100%;
+            max-width: 1120px;
+            // max-height: 100%;
             width: 100%;
-            background-color: rgb(33, 35, 46);
+            background-color: $sectionCardColor;
             display: flex;
             align-items: center;
-            justify-content: leftspace-between;
+            justify-content: space-around;
             margin: 35px auto;
-            border-radius: 10px ;
+            border-radius: 10px;
 
             img {
                 border-radius: 10px;
-                margin: 15px;
-                max-height: 300px;
+                margin: 15px; //here
                 width: 435px;
-                max-width: 100%;
+                height: auto;
             }
 
             div {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                max-width: 400px;
+                max-width: 600px;
                 width: 100%;
                 text-align: center;
                 color: rgb(255, 255, 255);
-                margin: 0 auto;
+                margin: 50px auto;
 
 
                 .section_card_heading {
-                    font-size: 20px;
-                    margin: 10px 0 10px 0;
+                    font-size: 18px;
+                    margin: 15px auto; //her
                     font-weight: 700;
                 }
 
                 .section_card_text {
 
                     color: rgb(174, 231, 246);
-                    font-size: 18px;
+                    font-size: 15px;
                     text-align: left;
-                    margin: 10px 0 10px 0;
+                    margin: 35px 0; // here was 10px 0 10px 0
 
 
                 }
 
                 a {
-                    font-size: 18px;
+                    font-size: 15px;
                     color: rgb(174, 231, 246);
-                    margin: 10px 0 10px 0;
+                    text-align: center;
+
                 }
             }
         }
     }
+
+    .section_banner {
+        background: $bannerBackgr;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        position: relative;
+        top: 50px;
+        z-index: 2;
+
+        .section_banner_text_wrap {
+            // display: flex;
+            // align-items: flex-start;
+            flex-direction: column;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+            margin: 30px 0 30px 50px;
+
+
+
+            .section_banner_heading {
+                color: $fontCol;
+                font-size: 30px;
+                font-weight: $fontWeight;
+                margin: auto; //here
+
+            }
+
+            .section_banner_text {
+                color: $fontCol;
+                font-size: 18px;
+                margin: auto;
+
+            }
+        }
+
+        .section_banner_button {
+            @include button;
+            margin: auto 70px;
+        }
+
+    }
 }
 
+.footer {
+    position: relative;
+    max-width: 1920px;
+    height: 150px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: $sectionCardColor;
+    z-index: 1;
 
 
+    .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      
+
+        .landing-logo {
+            img {
+                @include logo_image;
+            }
+
+            p {
+                @include logo_text_p;
+                margin: 50px auto;
+                max-width: 300px;
+                width: 100%;
 
 
-
-
-
-
-
-//button made MIXIN!!!!
-.header_button {
-    width: 148px;
-    height: 52px;
-    color: white;
-    background: rgb(105, 153, 0);
-    border: 1px solid rgb(105, 153, 0);
-    border-radius: 5px;
-    font-weight: 700;
-    font-size: 20px;
-    margin: 50px 0;
+                span {
+                    @include logo_text_span;
+                }
+            }
+        }
+        .footer_text{
+            color: $fontCol;
+            margin: 0 auto;
+            max-width: 300px;
+            width: 100%;
+        
+        }
+    }
 }
-
-//login
-.login {
-    font-size: 20px;
-    color: white;
-    font-weight: 700;
-    margin: 50px 0;
-
-}
-
-//--------
