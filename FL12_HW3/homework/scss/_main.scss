@@ -1,3 +1,6 @@
+$colors:(text: rgb(255, 255, 255),
+    button: rgb(105, 153, 0));
+
 @mixin logo_image {
     float: left;
     margin: 7px 0;
@@ -8,7 +11,7 @@
 
 @mixin logo_text_p {
 
-    color:$fontCol;
+    color: $fontCol;
     font-family: $logoFontFam;
     display: inline-block;
     margin: 0 auto;
@@ -31,9 +34,9 @@
 @mixin button {
     width: 148px;
     height: 52px;
-    color: white;
-    background: rgb(105, 153, 0);
-    border: 1px solid rgb(105, 153, 0);
+    color: map-get($colors, text);
+    background: map-get($colors, button);
+    border: 1px solid transparent;
     border-radius: 5px;
     font-weight: 700;
     font-size: 20px;
@@ -42,7 +45,7 @@
 
 @mixin login_url {
     font-size: 20px;
-    color: white;
+    color: map-get($colors, text);
     font-weight: 700;
 
 }
@@ -55,15 +58,12 @@ body {
     margin: 0 auto;
     font-family: 'Source Sans Pro', sans-serif;
 
-
 }
 
 ::selection {
     background: $selectionBkgr;
     color: $fontCol;
 }
-
-//header
 
 .header {
     background: $headerBackgr center no-repeat;
@@ -88,7 +88,7 @@ body {
 
             p {
                 @include logo_text_p;
-        
+
 
                 span {
                     @include logo_text_span;
@@ -101,15 +101,31 @@ body {
             max-width: 660px;
             margin: 25px 25px;
             text-align: left;
-
+            position: relative;
             font-weight: $fontWeight;
             font-size: 70px;
+            z-index: 1;
+
+            &:after {
+                content: "awesome";
+                background-color: $selectionBkgr;
+                position: absolute;
+                bottom: 18px;
+                left: 1px;
+                z-index: 10;
+                width: 292px;
+                height: 72px;
+            }
         }
 
         .header_text {
             @extend .header_heading;
             font-weight: 300;
             font-size: 20px;
+
+            &::after {
+                display: none;
+            }
         }
 
         div:last-child {
@@ -138,12 +154,24 @@ body {
 
 .section {
     text-align: center;
-    // z-index: 20;
+    position: relative;
+    z-index: 2;
 
     .section_text {
         color: $fontCol;
         font-size: 50px;
         font-weight: 600;
+
+        &:after {
+            content: "adventure";
+            background-color: $selectionBkgr;
+            position: absolute;
+            right: 716px;
+            top: 0;
+            width: 225px;
+            height: 50px;
+            z-index: 3;
+        }
     }
 
     .section_card_wrap {
@@ -154,7 +182,6 @@ body {
 
         .section_card {
             max-width: 1120px;
-            // max-height: 100%;
             width: 100%;
             background-color: $sectionCardColor;
             display: flex;
@@ -165,7 +192,7 @@ body {
 
             img {
                 border-radius: 10px;
-                margin: 15px; //here
+                margin: 15px;
                 width: 435px;
                 height: auto;
             }
@@ -177,29 +204,29 @@ body {
                 max-width: 600px;
                 width: 100%;
                 text-align: center;
-                color: rgb(255, 255, 255);
+                color: map-get($colors, text);
                 margin: 50px auto;
 
 
                 .section_card_heading {
                     font-size: 18px;
-                    margin: 15px auto; //her
+                    margin: 15px auto;
                     font-weight: 700;
                 }
 
                 .section_card_text {
 
-                    color: rgb(174, 231, 246);
+                    color: map-get($colors, text);
                     font-size: 15px;
                     text-align: left;
-                    margin: 35px 0; // here was 10px 0 10px 0
+                    margin: 35px 0;
 
 
                 }
 
                 a {
                     font-size: 15px;
-                    color: rgb(174, 231, 246);
+                    color: map-get($colors, text);
                     text-align: center;
 
                 }
@@ -221,8 +248,7 @@ body {
         z-index: 2;
 
         .section_banner_text_wrap {
-            // display: flex;
-            // align-items: flex-start;
+            ;
             flex-direction: column;
             text-align: left;
             max-width: 600px;
@@ -235,12 +261,12 @@ body {
                 color: $fontCol;
                 font-size: 30px;
                 font-weight: $fontWeight;
-                margin: auto; //here
+                margin: auto;
 
             }
 
             .section_banner_text {
-                color: white;
+                color: map-get($colors, text);
                 font-size: 18px;
                 margin: auto;
 
@@ -272,11 +298,11 @@ body {
         margin: 0 auto;
         align-items: center;
         justify-content: space-around;
-      
+
 
         .landing-logo {
             margin: 0 auto;
-            
+
 
             img {
                 @include logo_image;
@@ -284,24 +310,23 @@ body {
 
             p {
                 @include logo_text_p;
-                color: white ;
-                
-                // max-width: 300px;
-                
+                color: map-get($colors, text);
+
                 span {
                     @include logo_text_span;
                 }
             }
         }
-        .footer_text{
-            color: white;
+
+        .footer_text {
+            color: map-get($colors, text);
             margin: 0 auto;
             max-width: 300px;
-            // width: 100%;
-        
+
         }
-        .footer-cr{
-            color: white;
+
+        .footer-cr {
+            color: map-get($colors, text);
             margin: 0 auto;
         }
     }
