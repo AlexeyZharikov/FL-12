@@ -18,19 +18,11 @@ h4 {
     margin: 0 auto;
 }
 
-
-/* width 1600px */
-
-
-/* body */
 body {
     font-size: 15px;
     color: #000;
     line-height: 1.6;
 }
-
-/* header */
-
 
 .header {
     padding: 10px;
@@ -56,7 +48,7 @@ body {
 
 .nav-bar {
     font-size: 14px;
-    font-weight: 700px;
+    font-weight: 700;
 }
 
 .nav-link {
@@ -73,7 +65,6 @@ body {
     color: #bfba55;
 }
 
-/* intro */
 .intro {
     display: flex;
     flex-direction: column;
@@ -91,20 +82,20 @@ body {
     text-align: center;
 }
 
-.intro-logo {
+.iintro-header {
     font-size: 70px;
     color: #FFFFFF;
     font-weight: 700;
 }
 
-.intro-inner h4 {
+.intro-small-header {
     color: #bfba55;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 50px;
 }
 
-.intro-inner span {
+.intro-small-header span {
     text-transform: uppercase;
 }
 
@@ -123,11 +114,6 @@ body {
     transition: color 0.2s linear;
 }
 
-.but:hover {
-    color: #bfba55;
-}
-
-/* section */
 .section {
     width: 100%;
     margin: 120px auto;
@@ -142,8 +128,6 @@ body {
 
 .content {
     max-width: 900px;
-    /* width: 100%;
-    height: 630px; */
     margin: 0 auto 150px auto;
 
 }
@@ -158,13 +142,13 @@ body {
     margin: 15px auto;
 }
 
-/* author */
-.author p{
+.author p {
     display: inline-block;
     vertical-align: top;
     margin: 0 10px;
 }
-.aut-img{
+
+.aut-img {
     width: 43px;
     height: 43px;
     border: 1px solid transparent;
@@ -182,4 +166,44 @@ body {
 .section_but {
     text-transform: none;
     border: 1px solid grey;
+}
+
+.footer {
+    background: #000;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+}
+
+.footer-inner {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.about,
+.contact {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.about_header, .contact_header{
+    color: #FFFFFF;
+    font-size: 22px;
+    padding-top: 100px;
+    text-transform: uppercase;
+}
+.about-text, .contact-text{
+    color: #FFFFFF;
+    font-size: 15px;
 }
