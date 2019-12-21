@@ -6,6 +6,7 @@ body {
   line-height: 1;
   max-width: 1400px;
   width: 100%;
+  min-width: 330px;
 }
 
 .post-5 {
@@ -189,7 +190,7 @@ h5 {
 
 .burger-line::before {
   content: '';
-  top: -10px;
+  top: -13px;
 }
 
 .burger-line::after {
@@ -250,6 +251,23 @@ h5 {
   background: url("../img/post0.jpg") center no-repeat;
   background-size: cover;
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .intro {
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    background-size: initial ;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    max-width: 767px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .intro-inner {
