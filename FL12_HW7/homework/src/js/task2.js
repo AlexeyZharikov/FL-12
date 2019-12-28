@@ -1,10 +1,9 @@
-let min = 0;
-let max = 8
-let numberRange = 4;
 let attempt = 3;
 let prize1 = 100;
 let prize2 = 50;
 let prize3 = 25;
+const MAX1 = 9;
+const MAX2 = 13;
 const PRIZERANGE = 2;
 const NUM1 = 3;
 const NUM2 = 2;
@@ -17,7 +16,7 @@ if (confirm('Do you want to play a game?') === false) {
 } else {
     let totalPrize = 0;
     let curPrize = 200;
-    let randNumber = 5; //change
+    let randNumber = Math.floor(Math.random() * MAX1);   
     do {
         curPrize = curPrize / PRIZERANGE;
         let num = parseInt(prompt('attempts: ' + attempt + '\n' +
@@ -32,7 +31,7 @@ if (confirm('Do you want to play a game?') === false) {
             } else if (attempt === NUM3) {
                 totalPrize = totalPrize + prize3;
             }
-            attempt--;
+            attempt = 0;
         } else if (num !== randNumber) {
             totalPrize = totalPrize + 0;
             attempt--;
@@ -50,10 +49,11 @@ if (confirm('Do you want to play a game?') === false) {
         if (confirm('Congratulation, you won! Your prize is: ' + totalPrize +
                 ' $. Do you want to continue?') === false) {
             alert('Thank you for your participation. Your prize is: ' + totalPrize + ' $');
+            window.location.reload(true);
         } else {
             let attempt = 3;
             let curPrize = 400;
-            let randNumber = 5; //change
+            let randNumber = Math.floor(Math.random() * MAX2);
             do {
                 curPrize = curPrize / PRIZERANGE;
                 let num = parseInt(prompt('attempts: ' +
@@ -68,7 +68,7 @@ if (confirm('Do you want to play a game?') === false) {
                     } else if (attempt === NUM3) {
                         totalPrize = totalPrize + prize3 * PRIZERANGE;
                     }
-                    attempt--;
+                    attempt = 0;
                 } else if (num !== randNumber) {
                     totalPrize = totalPrize + 0;
                     attempt--;
