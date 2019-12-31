@@ -56,7 +56,8 @@ function countNumbers(str) {
         } else if (arr[i] === '9') {
             arr9.push(arr[i])
             Object[9] = arr9.length;
+        }
+        return Object;
     }
-    return Object;
 }
 countNumbers();
