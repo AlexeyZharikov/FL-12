@@ -14,11 +14,11 @@ function convert() {
     return arr;
 }
 
-function executeforEach(arr, callback) {
+function executeforEach(arr, cbfunc) {
     for (let i = 0; i < arr.length; i++) {
-        let val = arr[i];
-        callback(val);
+        cbfunc(arr[i]);
     }
+
 }
 
 function mapArray(arr, callback) {
@@ -39,10 +39,10 @@ function mapArray(arr, callback) {
     }
     arr = newArr2;
     executeforEach(arr, function (el) {
-        console.log(el * NUM2);
+        console.log(el * 2)
     });
+    return arr;
 
-    return newArr2;
 }
 
 function filterArray(arr, callback) {
@@ -55,7 +55,7 @@ function filterArray(arr, callback) {
     }
     arr = newArr;
     executeforEach(arr, function (el) {
-        console.log(el * NUM2);
+        console.log(el * 2)
     });
     return newArr;
 }
@@ -79,10 +79,43 @@ function makeListFromRange(arr) {
     }
     let lokalArr = [];
     let val = val1;
-    for (let x = 0; x < val2 - val1 - 1; x++){
+    for (let x = 0; x < val2 - val1 - 1; x++) {
         val = val + NUM1;
-    lokalArr.push(val);
-    } 
- return newArr = [val1, ...lokalArr, val2];
+        lokalArr.push(val);
+    }
+    return newArr = [val1, ...lokalArr, val2];
 }
 
+const actors = [{
+        name: 'tommy',
+        age: 36
+    },
+    {
+        name: 'lee',
+        age: 28
+    }
+];
+
+
+function getArrayOfKeys(arr, key) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i][key]);
+    }
+    return newArr;
+
+}
+
+function substitute(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 30) {
+            newArr.push(arr[i])
+        } else newArr.push('*');
+    }
+    mapArray(newArr, function (el) {
+        return el + 3
+    });
+    return newArr;
+
+}
