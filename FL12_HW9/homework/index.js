@@ -1,5 +1,7 @@
 const NUM1 = 1;
 const NUM2 = 2;
+const NUM3 = 3;
+
 
 function convert() {
     let arr = [];
@@ -39,7 +41,7 @@ function mapArray(arr, callback) {
     }
     arr = newArr2;
     executeforEach(arr, function (el) {
-        console.log(el * 2)
+        console.log(el * NUM2);
     });
     return arr;
 
@@ -55,7 +57,7 @@ function filterArray(arr, callback) {
     }
     arr = newArr;
     executeforEach(arr, function (el) {
-        console.log(el * 2)
+        console.log(el * NUM2);
     });
     return newArr;
 }
@@ -83,7 +85,8 @@ function makeListFromRange(arr) {
         val = val + NUM1;
         lokalArr.push(val);
     }
-    return newArr = [val1, ...lokalArr, val2];
+    newArr = [val1, ...lokalArr, val2];
+    return newArr;
 }
 
 const actors = [{
@@ -102,6 +105,10 @@ function getArrayOfKeys(arr, key) {
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i][key]);
     }
+
+    executeforEach(newArr, function (el) {
+        console.log(el * NUM2);
+    });
     return newArr;
 
 }
@@ -109,13 +116,38 @@ function getArrayOfKeys(arr, key) {
 function substitute(arr) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > 30) {
+        const AGE = 30;
+        if (arr[i] > AGE) {
             newArr.push(arr[i])
-        } else newArr.push('*');
+        } else {
+            newArr.push('*');
+        }
     }
     mapArray(newArr, function (el) {
-        return el + 3
+        return el + NUM3;
     });
     return newArr;
+}
 
+
+const date = new Date(2019, 0, 2);
+
+function getPastDay(date, num) {
+    let newDate = new Date();
+    let day = date.getDate();
+    newDate.setDate(day - num);
+    console.log(newDate.getDate());
+    return newDate;
+}
+
+function formatDate(date) {
+    let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let newFormat = year + '/' + months[month] + '/' + day + ' ' + hours + ':' + minutes;
+    return newFormat;
 }
