@@ -105,7 +105,6 @@ function getArrayOfKeys(arr, key) {
     for (let i = 0; i < arr.length; i++) {
         newArr.push(arr[i][key]);
     }
-
     executeforEach(newArr, function (el) {
         console.log(el * NUM2);
     });
@@ -136,13 +135,11 @@ function getPastDay(date, num) {
     let newDate = new Date();
     let day = date.getDate();
     newDate.setDate(day - num);
-    console.log(newDate.getDate());
-    return newDate;
+    return newDate.getDate();
 }
 
 function formatDate(date) {
-    let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
+    let months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
     let day = date.getDate();
     let month = date.getMonth();
     let year = date.getFullYear();
