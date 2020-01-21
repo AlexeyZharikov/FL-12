@@ -71,7 +71,7 @@ function Fighter({
         let attackProb = (100 - (Fighter.getStrength() + Fighter.getAgility())) / 100;
         if (attackProb >= 0 && attackProb <= 0.5) {
             if (Math.floor(Math.random() * 2) > 0) {
-                console.log(this.name + ' makes ' + this.damage + ' to ' + Fighter.getName());
+                console.log(this.name + ' makes ' + this.damage + ' damage to ' + Fighter.getName());
                 return Fighter.dealDamage(this.getDamage());
             } else {
                 console.log(this.name + ' attack missed');
@@ -79,14 +79,14 @@ function Fighter({
             }
         } else if (attackProb > 0.5 && attackProb <= 0.8) {
             if (Math.floor(Math.random() * 4) > 0) {
-                console.log(this.name + ' makes ' + this.damage + ' to ' + Fighter.getName());
+                console.log(this.name + ' makes ' + this.damage + ' damage to ' + Fighter.getName());
                 return Fighter.dealDamage(this.getDamage());
             } else {
                 return Fighter.getHealth();
             }
         } else if (attackProb > 0.8 && attackProb <= 1) {
             if (Math.floor(Math.random() * 8) > 0) {
-                console.log(this.name + ' makes ' + this.damage + ' to ' + Fighter.getName());
+                console.log(this.name + ' makes ' + this.damage + ' damage to ' + Fighter.getName());
                 return Fighter.dealDamage(this.getDamage());
             } else {
                 return Fighter.getHealth();
