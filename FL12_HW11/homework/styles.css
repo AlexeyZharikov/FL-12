@@ -1,0 +1,30 @@
+li{
+    list-style-type: none;
+}
+
+.close_folder{
+    color: orange;
+
+}
+
+.paper{
+    color: grey;
+}
+
+.file-item, .folder-item{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 5px;
+}
+
+.file-item{
+    visibility: hidden;
+}
+
+.file-item:hover, .folder-item:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+
