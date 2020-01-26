@@ -33,24 +33,32 @@ const structure = [{
 const rootNode = document.getElementById('root');
 
 // Todo: your code goes here
-function displayJsonTree( data) {
-  var htmlRetStr = "<ul class='folder-container'>";
+function displayTree(data) {
+  let htmlStr = "<ul class='folder-container'>";
   for (var key in data) {
-    if (typeof(data[key])== 'object' && data[key] != null) {
-      htmlRetStr += displayJsonTree( data[key] );
-      htmlRetStr += '</ul></li>';
-    } else if(data[key]==true){
-      htmlRetStr += "<i class='close_folder material-icons'>folder</i><li class='folder-item'>" +  data["title"]+"</li><li class='folder-wrapper'>";
-    }
-    else if( key=='title' && data['folder']!=true ){
-      htmlRetStr += "<i class='paper material-icons'>folder</i><li class='file-item'>" + data['title']+"</li>";
+    if (typeof data[key] === 'object') {
+      htmlStr += displayTree(data[key]);
+      htmlStr += '</ul></li>';
+    } else if (data[key] === true) {
+
+      htmlStr += "<ul class='folder-item'><i class='close_folder material-icons'>folder</i><span>" +
+        data["title"] + "</span></ul>";
+    } else if (key === 'title' && data['folder'] !== true) {
+      htmlStr += "<li class='file-item'><i class='paper material-icons'>insert_drive_file</i><span>" +
+        data['title'] + "</span></li>";
     }
   }
-  return( htmlRetStr );
+  return htmlStr;
 }
 
+rootNode.innerHTML = displayTree(structure);
 
-rootNode.innerHTML = displayJsonTree(structure);
 
-let el = rootNode.querySelector('.folder-item');
-el.addEventListener('click')
+let toggler = document.getElementsByClassName("folder-item");
+
+for (let i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function () {
+    this.parentElement.querySelector(".file-item").classList.toggle("active");
+    // this.classList.toggle("active");
+  });
+}
