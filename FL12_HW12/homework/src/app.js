@@ -39,6 +39,13 @@ closeBtn.setAttribute('href', '');
 let closeBtnT = document.createTextNode('Close');
 closeBtn.appendChild(closeBtnT);
 
+
+let sets;
+let listLocal = document.querySelector('.list_inner');
+function toLocalS(){
+    sets = listLocal.innerHTML;
+    localStorage.setItem('sets', todos);
+}
 function newSet() {
     loc.replace += "#add";
     div.appendChild(name);
@@ -79,19 +86,22 @@ function add() {
     li.appendChild(li_item2);
     li_item2.appendChild(t2);
 
-    if (inputValueHeader === '' || inputValueterm === '') {
+    if (name.value === '' || term.value === '') {
         alert("You must write something!");
     } else {
         list.appendChild(li);
     }
     document.getElementById("name").value = "";
     document.getElementById("term").value = "";
+    
 
     let modBtn = document.createElement('a');
     let modBtntxt = document.createTextNode("mod");
     modBtn.className = 'modify';
     modBtn.appendChild(modBtntxt);
     li.appendChild(modBtn);
+
+    
 
     for (let i = 0; i < mod.length; i++) {
         mod[i].onclick = function () {
@@ -136,7 +146,7 @@ function add() {
     }
 
     // window.location
-    return item;
+    toLocalS();
 }
 
 let del = document.getElementsByClassName("delete");
