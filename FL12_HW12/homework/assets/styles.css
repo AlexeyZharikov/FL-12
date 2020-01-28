@@ -1,0 +1,99 @@
+/* Your styles go here */
+.container {
+    max-width: 1200px;
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container div {
+    vertical-align: middle;
+}
+
+.addBtn,
+.closeBtn {
+    display: block;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+input {
+    display: block;
+}
+
+
+.name,
+.term {
+    width: 300px;
+    height: 40px;
+    font-size: 24px;
+    display: block;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+
+.inputBtn,.inputBtn2  {
+    width: 70px;
+    height: 46px;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    font-size: 24px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.inputBtn2 {
+    width: 100px;
+}
+
+.list {
+    margin-top: 20px;
+    padding-top: 10px;
+    
+}
+
+.list_inner{
+    margin-top: 15px;
+    border: 1px solid red;
+}
+
+.list_item {
+    margin-left: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    list-style-type: none;
+    display: block;
+    
+}
+
+.list_item:last-child {
+    margin-bottom: 10px;
+}
+
+.delete,
+.modify {
+    display: inline-block;
+    margin: 15px 15px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+
+.delete:hover,
+.modify:hover {
+    color: grey;
+}
